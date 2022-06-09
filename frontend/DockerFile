@@ -1,0 +1,11 @@
+FROM node
+
+RUN echo "version 1"
+
+RUN git clone git@github.com:kweonminsung/docker_study.git
+
+RUN cd frontend
+
+RUN npm install
+
+CMD ["npm", "start"]

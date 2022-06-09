@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  scgnew2022fe:
+    image: frontend:1
+    network_mode: host
+
+  scgnew2022be:
+    image: frontend:1
+    network_mode: host

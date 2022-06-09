@@ -1,0 +1,17 @@
+FROM python:3.10
+
+RUN echo "version 1"
+
+RUN git clone git@github.com:kweonminsung/docker_study.git
+
+RUN cd backend
+
+RUN python3 -m venv venv
+
+RUN source venv/Scripts/activate
+
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+
+CMD ["uvicorn", "main:app", "--reload", "--port 3001"]
