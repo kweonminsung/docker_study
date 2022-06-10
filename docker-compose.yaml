@@ -21,8 +21,8 @@ services:
 
   react:
     image: react
-    # react 컨테이너가 실행되기 전에 먼저 실행하는 의존성 설정
     restart: always
+    # react 컨테이너가 실행되기 전에 먼저 실행하는 의존성 설정
     depends_on:
       - fastapi
     container_name: react
