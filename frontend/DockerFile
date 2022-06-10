@@ -2,11 +2,7 @@ FROM node
 
 RUN echo "version 1"
 
-RUN mkdir /root/.ssh
-
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
-
-RUN git clone git@github.com:kweonminsung/docker_study.git
+RUN git clone https://github.com/kweonminsung/docker_study.git
 
 RUN cd frontend
 
