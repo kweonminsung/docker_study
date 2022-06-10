@@ -8,7 +8,7 @@ services:
     image: nginx
     # 컨테이너 이름
     container_name: nginx
-    # 컨테이너 종료 시 재시작 여부
+    # 컨테이너 종료 시 재시작 여부(Never, Always, On failure, Unless stopped가 있음)
     restart: always
     # 호스트와 컨테이너의 포트 바인드
     ports:
