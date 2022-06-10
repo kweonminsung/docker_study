@@ -13,9 +13,6 @@ services:
     # 호스트와 컨테이너의 포트 바인드
     ports:
       - 80:80
-    links:
-      - react
-      - fastapi
     volumes:
       - //c/nginx:/etc/nginx/conf.d
 
