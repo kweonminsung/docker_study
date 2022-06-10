@@ -15,18 +15,19 @@ services:
       - 80:80
     links:
       - react
+      - fastapi
     volumes:
-      - ~/Desktop/nginx:/etc/nginx/conf.d
+      - //c/nginx:/etc/nginx/conf.d
 
   react:
     image: react
     # react 컨테이너가 실행되기 전에 먼저 실행하는 의존성 설정
+    restart: always
     depends_on:
       - fastapi
     container_name: react
-    links:
-      - fastapi
 
   fastapi:
     image: fastapi
+    restart: always
     container_name: fastapi
