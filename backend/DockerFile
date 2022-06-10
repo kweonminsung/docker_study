@@ -2,6 +2,10 @@ FROM python:3.10
 
 RUN echo "version 1"
 
+RUN mkdir /root/.ssh && chmod 0700 /root/.ssh
+
+RUN ssh-keygen -F github.com -f ~/.ssh/known_hosts
+
 RUN git clone git@github.com:kweonminsung/docker_study.git
 
 RUN cd backend

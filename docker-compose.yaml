@@ -1,9 +1,30 @@
+# Docker compose 버전 정의
 version: '3.7'
-services:
-  scgnew2022fe:
-    image: frontend:1
-    network_mode: host
 
-  scgnew2022be:
+# container(service) 정의
+services:
+  nginx:
+    # 사용할 이미지
+    image: nginx
+    # 컨테이너 이름
+    container_name: nginx
+    # 컨테이너 종료 시 재시작 여부
+    restart: always
+    # 호스트와 컨테이너의 포트 바인드
+    ports:
+      - 80:80
+    links:
+      - react
+
+  react:
     image: frontend:1
-    network_mode: host
+    # react 컨테이너가 실행되기 전에 먼저 실행하는 의존성 설정
+    depends_on:
+      - react
+    container_name: react
+    links:
+      - fastapi
+
+  fastapi:
+    image: backend:1
+    container_name: fastapi
