@@ -15,8 +15,8 @@ services:
       - 80:80
     links:
       - react
-      # volumes:
-      - ~/Decktop/default.conf:/etc/nginx/conf.d/default.conf
+    volumes:
+      - ~/Desktop/nginx:/etc/nginx/conf.d
 
   react:
     image: react
