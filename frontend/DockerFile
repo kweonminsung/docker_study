@@ -2,7 +2,7 @@ FROM node
 
 RUN echo "version 1"
 
-RUN mkdir /root/.ssh && chmod 0700 /root/.ssh
+RUN mkdir /.ssh && chmod 0700 /.ssh
 
 RUN ssh-keygen -F github.com -f ~/.ssh/known_hosts
 
